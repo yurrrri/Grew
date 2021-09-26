@@ -16,6 +16,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,4 +44,24 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //loading dialog
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // https://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // https://github.com/square/okhttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    // https://github.com/square/retrofit/tree/master/retrofit-converters/gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    implementation "com.kakao.sdk:v2-user:2.5.2" // 카카오 로그인
 }
