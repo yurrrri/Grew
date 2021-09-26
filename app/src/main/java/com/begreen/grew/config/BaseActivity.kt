@@ -11,7 +11,7 @@ import com.begreen.grew.util.LoadingDialog
 // 액티비티의 기본을 작성, 뷰 바인딩 활용
 abstract class BaseActivity<B : ViewBinding>(private val inflate: (LayoutInflater) -> B) :
     AppCompatActivity() {
-    private lateinit var binding: B
+    lateinit var binding: B
     private lateinit var mLoadingDialog: LoadingDialog
 
     // 뷰 바인딩 객체를 받아서 inflate해서 화면을 만들어줌.

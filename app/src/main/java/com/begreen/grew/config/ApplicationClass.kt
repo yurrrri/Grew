@@ -15,7 +15,7 @@ class ApplicationClass : Application() {
     //val API_URL = "https://dev.tipkle.shop/"
 
     // 테스트 서버 주소
-    private val API_URL = "https://tipkle.shop/"
+    private val API_URL = "https://bari-softsquared.shop/"
 
     // 실 서버 주소
     // val API_URL = "http://api.test.com/"
@@ -37,7 +37,7 @@ class ApplicationClass : Application() {
         super.onCreate()
         //싱글톤 객체 2개
         sSharedPreferences =
-            applicationContext.getSharedPreferences("TIPKLE", MODE_PRIVATE)
+            applicationContext.getSharedPreferences("Grew", MODE_PRIVATE)
         // 레트로핏 인스턴스 생성
         initRetrofitInstance()
 

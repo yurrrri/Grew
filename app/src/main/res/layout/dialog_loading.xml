@@ -10,4 +10,4 @@
     android:maxHeight="65dip"
     android:minWidth="65dip"
     android:minHeight="65dip"
-    app:SpinKit_Color="@color/purple_200" />
+    app:SpinKit_Color="@color/grew_green" />

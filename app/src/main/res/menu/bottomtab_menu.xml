@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottom_action"
+        app:showAsAction="always"
+        android:icon="@drawable/bottom_action"
+        android:enabled="true"
+        android:title="홈" />
+    <item
+        android:id="@+id/bottom_home"
+        app:showAsAction="always"
+        android:icon="@drawable/bottom_home"
+        android:enabled="true"
+        android:title="팁끌" />
+
+    <item
+        android:id="@+id/bottom_mypage"
+        app:showAsAction="always"
+        android:icon="@drawable/bottom_mypage"
+        android:enabled="true"
+        android:title="마이페이지" />
+</menu>

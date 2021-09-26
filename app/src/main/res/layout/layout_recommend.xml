@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="253dp"
+        android:layout_height="300dp"
+        android:layout_marginRight="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ic_rectangle_20"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imgNews"
+        android:layout_width="223dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="15dp"
+        android:translationZ="90dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:srcCompat="@drawable/rectangle_21" />
+
+    <TextView
+        android:id="@+id/tvNewsTitle"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_marginTop="10dp"
+        android:text="[영상] 헌 페트병, 새 것보다 더 비싸질 수 있다]"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:translationZ="90dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgNews"
+        app:layout_constraintStart_toStartOf="@+id/imgNews"
+        app:layout_constraintTop_toBottomOf="@+id/imgNews" />
+
+    <TextView
+        android:id="@+id/tvNewsCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한겨레"
+        android:fontFamily="@font/nanum_squared_round_extra_bold"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/gray"
+        android:textSize="14dp"
+        android:translationZ="90dp"
+        app:layout_constraintStart_toStartOf="@+id/tvNewsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewsTitle" />
+
+    <TextView
+        android:id="@+id/tvNewsDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한겨레"
+        android:layout_marginTop="7dp"
+        android:textColor="@color/gray"
+        android:textSize="14dp"
+        android:translationZ="90dp"
+        app:layout_constraintStart_toStartOf="@+id/tvNewsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvNewsCompany" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBookMark"
+        android:layout_width="19dp"
+        android:layout_height="26dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/ic_empty_bookmark"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/tvNewsCompany"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
