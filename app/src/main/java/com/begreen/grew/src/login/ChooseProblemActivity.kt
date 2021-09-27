@@ -6,7 +6,6 @@ import android.util.Log
 import com.begreen.grew.R
 import com.begreen.grew.config.BaseActivity
 import com.begreen.grew.databinding.ActivityChooseProblemBinding
-import com.begreen.grew.src.main.MainActivity
 
 class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(ActivityChooseProblemBinding::inflate) {
 
@@ -24,11 +23,13 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
                 isClickedList[0]=1
                 binding.btnTrash.setBackgroundResource(R.drawable.ic_login_click)
                 binding.tvTrash.setTextColor(resources.getColor(R.color.grew_green))
+                categoryList.add("쓰레기 처리")
             }
             else{
                 isClickedList[0]=0
                 binding.btnTrash.setBackgroundResource(R.drawable.ic_login_unclick)
                 binding.tvTrash.setTextColor(resources.getColor(R.color.gray))
+                categoryList.remove("쓰레기 처리")
             }
         }
 
@@ -37,11 +38,13 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
                 isClickedList[1]=1
                 binding.btnAirPolution.setBackgroundResource(R.drawable.ic_login_click)
                 binding.tvAirPolution.setTextColor(resources.getColor(R.color.grew_green))
+                categoryList.add("대기 오염")
             }
             else{
                 isClickedList[1]=0
                 binding.btnAirPolution.setBackgroundResource(R.drawable.ic_login_unclick)
                 binding.tvAirPolution.setTextColor(resources.getColor(R.color.gray))
+                categoryList.remove("쓰레기 처리")
             }
         }
 
@@ -50,11 +53,13 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
                 isClickedList[2]=1
                 binding.btnTempChange.setBackgroundResource(R.drawable.ic_login_click)
                 binding.tvTempChange.setTextColor(resources.getColor(R.color.grew_green))
+                categoryList.add("기후 변화")
             }
             else{
                 isClickedList[2]=0
                 binding.btnTempChange.setBackgroundResource(R.drawable.ic_login_unclick)
                 binding.tvTempChange.setTextColor(resources.getColor(R.color.gray))
+                categoryList.remove("기후 변화")
             }
         }
 
@@ -63,11 +68,13 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
                 isClickedList[3]=1
                 binding.btnWaterPolution.setBackgroundResource(R.drawable.ic_login_click)
                 binding.tvWaterPolution.setTextColor(resources.getColor(R.color.grew_green))
+                categoryList.add("수질 오염")
             }
             else{
                 isClickedList[3]=0
                 binding.btnWaterPolution.setBackgroundResource(R.drawable.ic_login_unclick)
                 binding.tvWaterPolution.setTextColor(resources.getColor(R.color.gray))
+                categoryList.remove("수질 오염")
             }
         }
 
@@ -76,18 +83,22 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
                 isClickedList[4]=1
                 binding.btnEcoSystem.setBackgroundResource(R.drawable.ic_login_click)
                 binding.tvEcoSystem.setTextColor(resources.getColor(R.color.grew_green))
+                categoryList.add("생태계 보전")
             }
             else{
                 isClickedList[4]=0
                 binding.btnEcoSystem.setBackgroundResource(R.drawable.ic_login_unclick)
                 binding.tvEcoSystem.setTextColor(resources.getColor(R.color.gray))
+                categoryList.remove("생태계 보전")
             }
         }
 
         binding.btnProblemNext.setOnClickListener {
             val toAction = Intent(this, ChooseActionActivity::class.java)
             toAction.putExtra("accessToken", intent.getStringExtra("accessToken"))
+            toAction.putStringArrayListExtra("category", categoryList)
 
+            Log.d("kakao", categoryList.size.toString())
             Log.d("kakao", intent.getStringExtra("accessToken").toString())
 
             startActivity(toAction)

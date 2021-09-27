@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
-import com.begreen.grew.src.main.MainActivity
+import com.begreen.grew.src.main.view.MainActivity
 import com.begreen.grew.config.ApplicationClass
 import com.begreen.grew.config.BaseActivity
 import com.begreen.grew.databinding.ActivitySplashBinding

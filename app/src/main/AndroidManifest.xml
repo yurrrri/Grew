@@ -27,7 +27,7 @@
             android:name=".src.login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".src.main.MainActivity"
+            android:name=".src.main.view.MainActivity"
             android:theme="@style/Theme.Grew.green"
             android:exported="true" />
         <activity

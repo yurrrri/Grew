@@ -7,7 +7,8 @@ import com.begreen.grew.R
 import com.begreen.grew.config.ApplicationClass
 import com.begreen.grew.config.BaseActivity
 import com.begreen.grew.databinding.ActivityChooseActionBinding
-import com.begreen.grew.src.main.MainActivity
+import com.begreen.grew.src.main.view.HomeFragment
+import com.begreen.grew.src.main.view.MainActivity
 
 class ChooseActionActivity : BaseActivity<ActivityChooseActionBinding>(ActivityChooseActionBinding::inflate) {
 
@@ -107,7 +108,14 @@ class ChooseActionActivity : BaseActivity<ActivityChooseActionBinding>(ActivityC
 
             val toAction = Intent(this, MainActivity::class.java)
             toAction.putExtra("accessToken", intent.getStringExtra("accessToken"))
+            toAction.putStringArrayListExtra("category", intent.getStringArrayListExtra("category"))
 
+            val bundle = Bundle()
+            bundle.putStringArrayList("category", intent.getStringArrayListExtra("category"))
+            val homeFragment = HomeFragment()
+            homeFragment.arguments = bundle
+
+            Log.d("kakao", intent.getStringArrayListExtra("category")?.size.toString())
             Log.d("kakao", intent.getStringExtra("accessToken").toString())
 
             editor.putString(ApplicationClass.kakaoToken, intent.getStringExtra("accessToken"))
