@@ -14,19 +14,41 @@ import com.begreen.grew.src.main.HomeService
 import com.begreen.grew.src.main.RecommendAdapter
 import com.begreen.grew.src.main.model.NewsReponse
 import com.begreen.grew.src.main.model.PostNewsRequest
+import org.json.JSONException
+
+import org.json.JSONArray
+
+import android.preference.PreferenceManager
+
+import android.content.SharedPreferences
+import com.begreen.grew.src.main.AgeNewsAdapter
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
     FragmentHomeBinding::bind,
     R.layout.fragment_home
 ), HomeFragmentView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val sf = ApplicationClass.sSharedPreferences
+
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvName.text = ApplicationClass.sSharedPreferences.getString("name", null)
-        //Log.d("hello", intent.getStringArrayList("category")?.size.toString())
+        val json = sf.getString("category", null)
+        val categories = ArrayList<String>()
+
+        if (json != null){
+            try {
+                val a = JSONArray(json)
+                for (i in 0 until a.length()) {
+                    val category = a.optString(i)
+                    categories.add(category)
+                }
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        }
 
         showLoadingDialog(requireContext())
-        val postNewsRequest = PostNewsRequest(arguments?.getStringArrayList("category")?.toList() as List<String>)
+        val postNewsRequest = PostNewsRequest(categories)
         HomeService(this).tryPostNews(postNewsRequest = postNewsRequest)
     }
 
@@ -34,6 +56,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
         dismissLoadingDialog()
         binding.rvRecommend.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvRecommend.adapter = RecommendAdapter(requireContext(), response.result.first)
+
+        binding.rvManyNews.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvManyNews.adapter = AgeNewsAdapter(requireContext(), response.result.second)
     }
 
     override fun onGetNewsFailure(message: String) {

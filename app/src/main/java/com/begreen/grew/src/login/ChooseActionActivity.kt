@@ -2,17 +2,14 @@ package com.begreen.grew.src.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import com.begreen.grew.R
 import com.begreen.grew.config.ApplicationClass
 import com.begreen.grew.config.BaseActivity
 import com.begreen.grew.databinding.ActivityChooseActionBinding
-import com.begreen.grew.src.main.view.HomeFragment
-import com.begreen.grew.src.main.view.MainActivity
 
 class ChooseActionActivity : BaseActivity<ActivityChooseActionBinding>(ActivityChooseActionBinding::inflate) {
 
-    var actionList = arrayListOf<String>()
+    //var actionList = arrayListOf<String>()
     private val isClickedList = Array(6){0}
     val editor = ApplicationClass.sSharedPreferences.edit()
 
@@ -102,26 +99,27 @@ class ChooseActionActivity : BaseActivity<ActivityChooseActionBinding>(ActivityC
 
         binding.btnActionNext.setOnClickListener {
 
-//            editor.putString(ApplicationClass.kakaoToken, intent.getStringExtra("accessToken"))
-//            editor.putString("name", intent.getStringExtra("name"))
-//            editor.apply()
-
-            val toAction = Intent(this, MainActivity::class.java)
-            toAction.putExtra("accessToken", intent.getStringExtra("accessToken"))
-            toAction.putStringArrayListExtra("category", intent.getStringArrayListExtra("category"))
-
-            val bundle = Bundle()
-            bundle.putStringArrayList("category", intent.getStringArrayListExtra("category"))
-            val homeFragment = HomeFragment()
-            homeFragment.arguments = bundle
-
-            Log.d("kakao", intent.getStringArrayListExtra("category")?.size.toString())
-            Log.d("kakao", intent.getStringExtra("accessToken").toString())
-
+            //마지막까지 왔으니 카카오 accessToken을 sharedpreferences에 저장
             editor.putString(ApplicationClass.kakaoToken, intent.getStringExtra("accessToken"))
+            //editor.putString("name", intent.getStringExtra("name"))
             editor.apply()
 
-            startActivity(toAction)
+            val toLoading = Intent(this, LoadingActivity::class.java)
+//            toAction.putExtra("accessToken", intent.getStringExtra("accessToken"))
+//            toAction.putStringArrayListExtra("category", intent.getStringArrayListExtra("category"))
+//
+//            val bundle = Bundle()
+//            bundle.putStringArrayList("category", intent.getStringArrayListExtra("category"))
+//            val homeFragment = HomeFragment()
+//            homeFragment.arguments = bundle
+//
+//            Log.d("kakao", intent.getStringArrayListExtra("category")?.size.toString())
+//            Log.d("kakao", intent.getStringExtra("accessToken").toString())
+//
+//            editor.putString(ApplicationClass.kakaoToken, intent.getStringExtra("accessToken"))
+//            editor.apply()
+
+            startActivity(toLoading)
             finish()
         }
     }

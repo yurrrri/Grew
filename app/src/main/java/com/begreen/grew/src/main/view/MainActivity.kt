@@ -14,6 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         super.onCreate(savedInstanceState)
         initNavigationBar()
 
+        //검색 버튼은 일단 로그아웃되게 처리해두었습니다.
         binding.btnSearch.setOnClickListener {
             val editor = ApplicationClass.sSharedPreferences.edit()
             editor.remove(ApplicationClass.X_ACCESS_TOKEN)

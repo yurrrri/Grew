@@ -44,10 +44,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
                                 "\n닉네임: ${user.kakaoAccount?.profile?.nickname}" +
                                 "\n프로필사진: ${user.kakaoAccount?.profile?.thumbnailImageUrl}")
                         name = user.kakaoAccount?.profile?.nickname
-                        editor.putString("name", name)
-                        editor.apply()
                     }
                 }
+
+                editor.putString("name", name)
+                editor.apply()
 
                 startActivity(toRegister)
                 finish()

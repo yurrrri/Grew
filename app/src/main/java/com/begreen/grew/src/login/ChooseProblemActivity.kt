@@ -4,13 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.begreen.grew.R
+import com.begreen.grew.config.ApplicationClass
 import com.begreen.grew.config.BaseActivity
 import com.begreen.grew.databinding.ActivityChooseProblemBinding
+import org.json.JSONArray
 
 class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(ActivityChooseProblemBinding::inflate) {
 
     var categoryList = arrayListOf<String>()
     private val isClickedList = Array(5){0}
+    val editor = ApplicationClass.sSharedPreferences.edit()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,13 +96,23 @@ class ChooseProblemActivity : BaseActivity<ActivityChooseProblemBinding>(Activit
             }
         }
 
+        //카카오 액세스 토큰은 인텐트로 넘겨주고, 카테고리 리스트는 sharedpreferences에 저장
         binding.btnProblemNext.setOnClickListener {
             val toAction = Intent(this, ChooseActionActivity::class.java)
             toAction.putExtra("accessToken", intent.getStringExtra("accessToken"))
-            toAction.putStringArrayListExtra("category", categoryList)
+            //toAction.putStringArrayListExtra("category", categoryList)
 
-            Log.d("kakao", categoryList.size.toString())
-            Log.d("kakao", intent.getStringExtra("accessToken").toString())
+            //Log.d("kakao", categoryList.size.toString())
+            //Log.d("kakao", intent.getStringExtra("accessToken").toString())
+
+            //배열을 sharedpreferences에 저장하는 부분
+            val a = JSONArray()
+            for (i in 0 until categoryList.size) {
+                a.put(categoryList[i])
+            }
+
+            editor.putString("category", a.toString())
+            editor.apply()
 
             startActivity(toAction)
             finish()
