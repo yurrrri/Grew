@@ -33,7 +33,7 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(
 
         Glide
             .with(requireContext())
-            .load(R.drawable.profile)
+            .load(R.drawable.haeun)
             .apply(requestOptions)
             .into(binding.imgProfile) //멤버 프로필
 

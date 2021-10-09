@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:text="이유리 님"
+        android:text="이하은 님"
         android:fontFamily="@font/nanum_squared_round_extra_bold"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -115,7 +115,7 @@
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.44"
+        app:layout_constraintHeight_percent="0.65"
         android:src="@drawable/tree_background"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,13 +138,12 @@
         android:id="@+id/imgTree"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        app:layout_constraintHeight_percent="0.4"
         android:scaleType="fitXY"
         android:src="@drawable/ic_trees_05_1"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imgScrap"

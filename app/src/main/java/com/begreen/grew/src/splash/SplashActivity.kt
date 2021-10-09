@@ -28,7 +28,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         )
 
         //카카오 토큰이 있으면 -> 메인화면으로
-        if (sf.getString(ApplicationClass.kakaoToken, null)!=null){
+        if (sf.getString(ApplicationClass.X_ACCESS_TOKEN, null)!=null){
             Handler(Looper.getMainLooper()).postDelayed({
                 val toMain = Intent(this, MainActivity::class.java)
                 startActivity(toMain)

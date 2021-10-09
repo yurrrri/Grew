@@ -20,13 +20,40 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/imgGrayBackground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gray_background"
+                android:translationZ="90dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imgDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tree_check"
+                android:translationZ="90dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgGrayBackground"
+                tools:visibility="visible" />
+
             <TextView
                 android:id="@+id/tvName5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="21dp"
                 android:fontFamily="@font/nanum_squared_round_extra_bold"
-                android:text="이유리"
+                android:text="이하은"
                 android:textColor="@color/black"
                 android:textSize="22dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,20 +82,29 @@
                 app:layout_constraintTop_toTopOf="@+id/tvName6" />
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/imgGraph"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="340dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/grew_graph"
+                android:src="@drawable/graph_before"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="0dp"
+                android:layout_height="135dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgGraph" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnDetail"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
                 android:background="@drawable/detail_background"
                 android:text="자세히 알아보기"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +126,7 @@
             <ImageView
                 android:id="@+id/imgRecommend"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="370dp"
                 android:layout_marginTop="12dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/recommend_activity"
@@ -114,10 +150,10 @@
             <ImageView
                 android:id="@+id/imgMyActivity"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="520dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/my_activity"
+                android:src="@drawable/my_activity_lilst"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvName8" />

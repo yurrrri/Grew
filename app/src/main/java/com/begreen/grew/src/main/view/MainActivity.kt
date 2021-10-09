@@ -10,13 +10,18 @@ import com.begreen.grew.databinding.ActivityMainBinding
 import com.begreen.grew.src.login.LoginActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
+    val editor = ApplicationClass.sSharedPreferences.edit()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         initNavigationBar()
+        editor.putInt("count", 1)
+        editor.apply()
 
         //검색 버튼은 일단 로그아웃되게 처리해두었습니다.
         binding.btnSearch.setOnClickListener {
-            val editor = ApplicationClass.sSharedPreferences.edit()
             editor.remove(ApplicationClass.X_ACCESS_TOKEN)
             editor.apply()
 
@@ -49,7 +54,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             selectedItemId = R.id.bottom_home
         }
     }
-    private fun changeFragment(fragment: Fragment) {
+    fun changeFragment(fragment: Fragment) {
         supportFragmentManager .beginTransaction() .replace(R.id.outerFrame, fragment) .commit()
     }
 }

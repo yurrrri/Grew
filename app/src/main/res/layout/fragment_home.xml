@@ -10,8 +10,9 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="21dp"
                 android:fontFamily="@font/nanum_squared_round_extra_bold"
-                android:text="이유리"
+                android:text="이하은"
                 android:textColor="@color/black"
                 android:textSize="22dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -92,9 +93,10 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvManyNews"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
+                android:nestedScrollingEnabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
