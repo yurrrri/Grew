@@ -22,6 +22,7 @@ import android.preference.PreferenceManager
 
 import android.content.SharedPreferences
 import com.begreen.grew.src.main.AgeNewsAdapter
+import com.begreen.grew.src.main.model.MyPageResponse
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
     FragmentHomeBinding::bind,
@@ -64,5 +65,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
     override fun onGetNewsFailure(message: String) {
         dismissLoadingDialog()
         showCustomToast(message)
+    }
+
+    override fun onGetMyPageSuccess(response: MyPageResponse) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGetMyPageFailure(message: String) {
+        TODO("Not yet implemented")
     }
 }

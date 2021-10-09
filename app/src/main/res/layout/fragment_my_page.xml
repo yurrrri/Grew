@@ -29,7 +29,7 @@
         android:layout_marginLeft="36dp" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tvUserNAme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -51,7 +51,7 @@
         android:textColor="@color/gray"
         android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserNAme" />
 
     <TextView
         android:id="@+id/textView15"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/tvTreeNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanum_squared_round_b"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView15" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/tvActNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanum_squared_round_b"
@@ -109,7 +109,7 @@
         android:layout_marginEnd="35dp"
         android:src="@drawable/ic_mypage_write"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView13" />
+        app:layout_constraintTop_toTopOf="@+id/tvUserNAme" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -135,16 +135,19 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imgTree"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_trees_05_1"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imgScrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
@@ -158,11 +161,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanum_squared_round_extra_bold"
-        android:text="내가 스크랩한 글 보러 가기"
+        android:text="내가 스크랩한 기사 보러 가기"
         android:layout_marginLeft="27dp"
         android:textColor="@color/black"
         android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="@+id/imgScrap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
@@ -172,7 +175,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_bookmark_full"
         android:layout_marginRight="38dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="@+id/imgScrap"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 

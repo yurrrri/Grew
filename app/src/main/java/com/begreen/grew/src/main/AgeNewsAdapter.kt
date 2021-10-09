@@ -15,6 +15,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import androidx.core.content.ContextCompat.startActivity
+
+import android.content.Intent
+import android.net.Uri
+import androidx.core.content.ContextCompat
 
 class AgeNewsAdapter(val context: Context, private val recommendList: List<Second>):
     RecyclerView.Adapter<AgeNewsAdapter.ItemViewHolder>(){
@@ -51,6 +56,21 @@ class AgeNewsAdapter(val context: Context, private val recommendList: List<Secon
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(recommendList[position], context)
+        holder.itemView.setOnClickListener {
+            val browserIntent =
+                Intent(Intent.ACTION_VIEW, Uri.parse(recommendList[position].news_url))
+            startActivity(context, browserIntent, null)
+        }
+
+        holder.itemView.setOnLongClickListener {
+             val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, recommendList[position].news_url);
+            val chooser = Intent.createChooser(intent, "친구에게 공유하기")
+            startActivity(context, chooser, null)
+
+            false
+        }
     }
 
     override fun getItemCount(): Int {

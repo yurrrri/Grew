@@ -1,12 +1,15 @@
 package com.begreen.grew.src.main
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.begreen.grew.R
 import com.begreen.grew.src.main.model.First
@@ -62,11 +65,17 @@ class RecommendAdapter(val context: Context, private val recommendList: List<Fir
         viewType: Int
     ): ItemViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.layout_recommend, parent, false)
+
         return ItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(recommendList[position], context)
+        holder.itemView.setOnClickListener {
+            val browserIntent =
+                Intent(Intent.ACTION_VIEW, Uri.parse(recommendList[position].news_url))
+            ContextCompat.startActivity(context, browserIntent, null)
+        }
     }
 
     override fun getItemCount(): Int {

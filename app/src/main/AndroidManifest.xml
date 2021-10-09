@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="false" />
 
     <application
         android:name=".config.ApplicationClass"
@@ -14,6 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Grew.white">
+        <activity
+            android:name=".src.main.view.MyNewsActivity"
+            android:exported="true" />
         <activity
             android:name=".src.login.LoadingActivity"
             android:exported="true" />
@@ -28,8 +36,8 @@
             android:exported="true" />
         <activity
             android:name=".src.main.view.MainActivity"
-            android:theme="@style/Theme.Grew.green"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Grew.green" />
         <activity
             android:name=".src.splash.SplashActivity"
             android:exported="true">

@@ -8,5 +8,6 @@ data class Second(
     val is_scrap: Int,
     val provider: String,
     val published_at: String,
+    val news_url:String,
     val title: String
 )

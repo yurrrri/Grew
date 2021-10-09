@@ -1,6 +1,6 @@
 package com.begreen.grew.src.main.model
 
-data class First(
+data class Scrap(
     val category: String,
     val contents: String,
     val idx: Int,
